@@ -1,0 +1,15 @@
+zypper install apache2 
+systemctl start apache2.service 
+cd /srv/www/vhosts
+mkdir naam.local naam.local 
+ls 
+cd naam.local 
+vi index.html
+cd /etc/apache2/vhosts.d 
+ls
+cp vhost.template naam.conf
+vi naam.conf
+:1,$ s/dummy-host.example.com/naam.local/g
+vi /etc/hosts 
+ip naam.local 
+systemctl reload apache2
